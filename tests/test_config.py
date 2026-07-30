@@ -90,3 +90,18 @@ def test_available_templates(mock_config_paths):
     assert "my_custom" in templates
     assert templates["gjm8"] is None  # Builtin
     assert templates["my_custom"] == mock_dir.return_value / "my_custom.svg"  # Custom
+
+
+def test_builtin_template_is_packaged_without_docs_fallback(mock_config_paths, tmp_path, monkeypatch):
+    missing_docs = tmp_path / "missing-docs-examples"
+    monkeypatch.setattr(
+        ConfigManager,
+        "_get_dev_template_path",
+        lambda self: missing_docs,
+    )
+
+    manager = ConfigManager()
+
+    content = manager._get_builtin_template_content("gjm8")
+    assert content is not None
+    assert b'id="terminal"' in content

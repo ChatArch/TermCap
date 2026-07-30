@@ -24,6 +24,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: System :: Shells",
     "Topic :: Terminals",
 ]
@@ -35,6 +36,9 @@ dependencies = [
     "platformdirs",
     "toml",
     "rich",
+    "pillow",
+    "selenium>=4.10",
+    "webdriver-manager>=4.0",
 ]
 
 [project.optional-dependencies]
@@ -50,16 +54,21 @@ dev = [
     "mkdocs-material",
     "mkdocs-minify-plugin",
     "mkdocs-static-i18n",
+    "mike",
 ]
 docs = [
     "mkdocs",
     "mkdocs-material",
     "mkdocs-minify-plugin",
     "mkdocs-static-i18n",
+    "mike",
 ]
 
 [project.urls]
-Homepage = "https://github.com/rexwzh/termcap"
+Homepage = "https://arch.gh.wzhecnu.cn/TermCap/"
+Documentation = "https://arch.gh.wzhecnu.cn/TermCap/"
+Source = "https://github.com/ChatArch/TermCap"
+Issues = "https://github.com/ChatArch/TermCap/issues"
 
 [project.scripts]
 termcap = "termcap.cli:main"

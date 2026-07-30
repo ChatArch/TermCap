@@ -1,67 +1,67 @@
 # TermCap
 
-[![Test](https://github.com/rexwzh/termcap/actions/workflows/ci.yml/badge.svg)](https://github.com/rexwzh/termcap/actions/workflows/ci.yml)
-[![Docs](https://github.com/rexwzh/termcap/actions/workflows/deploy.yml/badge.svg)](https://termcap.wzhecnu.cn)
+[![测试](https://github.com/ChatArch/TermCap/actions/workflows/ci.yml/badge.svg)](https://github.com/ChatArch/TermCap/actions/workflows/ci.yml)
+[![文档](https://github.com/ChatArch/TermCap/actions/workflows/deploy.yml/badge.svg)](https://arch.gh.wzhecnu.cn/TermCap/)
 [![PyPI](https://img.shields.io/pypi/v/termcap.svg)](https://pypi.org/project/termcap/)
 
-**TermCap** 是一个用 Python 编写的 Unix 终端录制工具，可以将你的命令行会话渲染为独立的 SVG 动画。
+TermCap 是一个 Python 终端录制与渲染工具：把 PTY 会话保存为 asciicast v2，并输出 SVG 动画、静态 SVG 帧或 GIF。
 
-## 特性
+- [完整文档](https://arch.gh.wzhecnu.cn/TermCap/)
+- [快速开始](https://arch.gh.wzhecnu.cn/TermCap/quickstart/)
+- [CLI 树](https://arch.gh.wzhecnu.cn/TermCap/cli-tree/)
+- [录制与渲染](https://arch.gh.wzhecnu.cn/TermCap/rendering/)
+- [英文版](README.en.md)
 
-- 生成轻量级且外观整洁的动画，可嵌入到项目页面中
-- 通过 [SVG 模板](docs/manual/termcap-templates.md) 支持自定义颜色主题、终端 UI 和动画控制
-- 兼容 asciinema 录制格式
+## 核心能力
+
+- 交互 shell 与单命令 PTY 录制
+- 兼容 asciinema 的 `.cast` 格式
+- ANSI 颜色、光标、文本样式和宽字符渲染
+- 模板化 SVG 动画与 16 套内置主题
+- CAST→SVG、CAST→GIF、SVG→GIF
+- 关键帧确定性采样和 Chrome viewport 自动校正
 
 <p align="center">
-    <img src="docs/examples/awesome_window_frame_js.svg" width="80%">
+  <img src="docs/examples/awesome_window_frame_js.svg" width="80%" alt="TermCap 终端动画示例">
 </p>
 
 ## 安装
 
-TermCap 兼容 Linux、macOS 和 BSD 操作系统，需要 Python >= 3.8，可以使用 pip 安装：
+TermCap 支持 Linux、macOS 和 BSD，需要 Python 3.8 或更高版本。GIF 导出需要 Google Chrome。
 
 ```bash
-pip3 install --user termcap
+python -m pip install termcap
+termcap --version
 ```
 
-## 使用方法
-
-只需使用以下命令开始录制终端会话：
+## 最短工作流
 
 ```bash
-$ termcap record
-Recording started.
-Enter "exit" command or Control-D to end.
+termcap record demo.cast -g 80x20
+termcap render demo.cast demo.svg
+termcap render demo.cast demo.gif --format gif
 ```
 
-现在你处于一个子 shell 中，可以像往常一样输入命令。
-完成后，退出 shell 即可结束录制：
+录制单条命令：
 
 ```bash
-$ exit
-✓ 录制完成，时长: 10.5秒，共 42 个事件
-Recording ended, cast file is /tmp/termcap_exp5nsr4.cast
+termcap record tests.cast -g 100x24 -c "python -m pytest -q"
 ```
 
-最后，使用以下命令将录制内容渲染为 SVG 动画：
+已有 SVG 转 GIF：
 
 ```bash
-$ termcap render /tmp/termcap_exp5nsr4.cast animation.svg
-Rendering started
-✓ 渲染完成
-Rendering ended, SVG animation is animation.svg
+termcap svg2gif demo.svg demo.gif --speed 1 --loop 0
 ```
 
-你也可以使用你喜欢的 Web 浏览器播放动画：
+## 文档开发
 
 ```bash
-$ firefox animation.svg
+python -m pip install -e '.[dev,docs]'
+mkdocs serve
+mkdocs build --strict
 ```
 
 ## 许可证
 
-**MIT License**
-
-## 作者
-
-- **termcap**: rexwzh (1073853456@qq.com)
+MIT License

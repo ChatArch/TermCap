@@ -94,18 +94,18 @@ See below for an example.
     </svg>
 </svg>
 ```
-Complete example here: [gjm8.svg](../../assets/templates/gjm8.svg)
+Complete example here: [gjm8.svg](../examples/gjm8.svg)
 
 ### Custom terminal UI
-Complete example here: [window_frame.svg](../../assets/templates/window_frame.svg)
+Complete example here: [window_frame.svg](../examples/window_frame.svg)
 
 ### CSS progress bar
-Complete example here: [colors_progress_bar.svg](../../assets/templates/colors_progress_bar.svg)
+Complete example here: [colors_progress_bar.svg](../examples/colors_progress_bar.svg)
 
 ### Embedding JavaScript
 Just add your code in a new `script` element.
 
-Complete example here: [window_frame_js](../../assets/templates/window_frame_js.svg)
+Complete example here: [window_frame_js](../examples/window_frame_js.svg)
 
 ### Restricting the animation to a single loop
 For a template using CSS, simply add a custom style element specifying the number of loops like so:
@@ -116,7 +116,7 @@ For a template using CSS, simply add a custom style element specifying the numbe
     }
 </style>
 ```
-Complete example here: [gjm8_single_loop](../../assets/templates/gjm8_single_loop.svg)
+Complete example here: [gjm8_single_loop](../examples/gjm8_single_loop.svg)
 
 ## termcap internal template usage
 In order to produce the final animation, termcap will modify the template in a number of ways.

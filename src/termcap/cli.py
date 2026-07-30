@@ -21,6 +21,9 @@ def main(ctx, version):
         click.echo(f"termcap {version_str}")
         return
 
+    if ctx.invoked_subcommand is None:
+        click.echo(ctx.get_help())
+
 
 register_commands(main)
 

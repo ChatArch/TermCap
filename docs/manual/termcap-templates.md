@@ -90,18 +90,18 @@
     </svg>
 </svg>
 ```
-完整示例：[gjm8.svg](../../assets/templates/gjm8.svg)
+完整示例：[gjm8.svg](../examples/gjm8.svg)
 
 ### 自定义终端 UI
-完整示例：[window_frame.svg](../../assets/templates/window_frame.svg)
+完整示例：[window_frame.svg](../examples/window_frame.svg)
 
 ### CSS 进度条
-完整示例：[colors_progress_bar.svg](../../assets/templates/colors_progress_bar.svg)
+完整示例：[colors_progress_bar.svg](../examples/colors_progress_bar.svg)
 
 ### 嵌入 JavaScript
 只需在一个新的 `script` 元素中添加代码。
 
-完整示例：[window_frame_js](../../assets/templates/window_frame_js.svg)
+完整示例：[window_frame_js](../examples/window_frame_js.svg)
 
 ### 限制动画为单次循环
 对于使用 CSS 的模板，只需添加一个指定循环次数的自定义样式元素，如下所示：
@@ -112,7 +112,7 @@
     }
 </style>
 ```
-完整示例：[gjm8_single_loop](../../assets/templates/gjm8_single_loop.svg)
+完整示例：[gjm8_single_loop](../examples/gjm8_single_loop.svg)
 
 ## termcap 内部模板使用
 为了生成最终动画，termcap 将以多种方式修改模板。

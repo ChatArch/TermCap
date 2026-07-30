@@ -1,73 +1,96 @@
-site_name: TermCap Documentation
-site_url: https://termcap.wzhecnu.cn
-repo_url: https://github.com/rexwzh/termcap
-repo_name: TermCap
+site_name: TermCap 文档
+site_description: 终端会话录制、SVG 动画渲染与 GIF 导出
+site_url: https://arch.gh.wzhecnu.cn/TermCap/
+repo_url: https://github.com/ChatArch/TermCap
+repo_name: ChatArch/TermCap
 edit_uri: edit/master/docs/
+
+copyright: Copyright &copy; ChatArch
 
 theme:
   name: material
+  language: zh
   palette:
     primary: teal
-    accent: purple
+    accent: cyan
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Noto Sans
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.instant
+    - navigation.indexes
     - search.highlight
     - search.share
     - content.code.copy
     - content.code.annotate
 
 plugins:
-  - search:
-      lang: zh
+  - search
   - minify:
       minify_html: true
   - i18n:
       docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
       languages:
         - locale: zh
-          name: 简体中文
           default: true
+          name: 中文
+          build: true
+          site_name: TermCap 文档
         - locale: en
           name: English
+          build: true
+          site_name: TermCap Documentation
+          nav_translations:
+            首页: Home
+            快速开始: Quick Start
+            CLI 树: CLI Tree
+            录制与渲染: Capture and Rendering
+            能力边界: Capability Map
+            示例: Examples
+            模板: Templates
+            手册: Manuals
+            TermCap 手册: TermCap Manual
+            模板手册: Template Manual
+
+extra:
+  alternate:
+    - name: 中文
+      link: /TermCap/
+      lang: zh
+    - name: English
+      link: /TermCap/en/
+      lang: en
 
 markdown_extensions:
   - admonition
-  - codehilite:
-      guess_lang: false
+  - attr_list
+  - def_list
+  - md_in_html
   - toc:
       permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.highlight:
-      use_pygments: true
-      pygments_style: friendly
-  - pymdownx.caret
-  - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
+  - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tilde
-  - def_list
-  - attr_list
-  - md_in_html
 
 nav:
   - 首页: index.md
+  - 快速开始: quickstart.md
+  - CLI 树: cli-tree.md
+  - 录制与渲染: rendering.md
+  - 能力边界: capability-map.md
   - 示例: examples/index.md
   - 模板: templates.md
   - 手册:
-    - TermCap: manual/termcap.md
-    - 模板: manual/termcap-templates.md
+      - TermCap 手册: manual/termcap.md
+      - 模板手册: manual/termcap-templates.md
