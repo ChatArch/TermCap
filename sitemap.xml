@@ -1,73 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://termcap.wzhecnu.cn/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/templates/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/capability-map/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/templates/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/templates/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/capability-map/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/capability-map/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/examples/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/cli-tree/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/examples/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/cli-tree/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/cli-tree/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/manual/termcap-templates/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/quickstart/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/manual/termcap-templates/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/manual/termcap-templates/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/quickstart/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/manual/termcap/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/rendering/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/manual/termcap/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/manual/termcap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/rendering/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/en/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/templates/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/templates/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/templates/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/en/templates/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/examples/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/templates/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/templates/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/examples/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/en/examples/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/manual/termcap-templates/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/manual/termcap-templates/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/manual/termcap-templates/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/en/manual/termcap-templates/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/manual/termcap/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/manual/termcap-templates/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/manual/termcap-templates/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/manual/termcap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/manual/termcap/"/>
     </url>
     <url>
-        <loc>https://termcap.wzhecnu.cn/en/manual/termcap/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/</loc>
+        <lastmod>2026-07-30</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://termcap.wzhecnu.cn/en/manual/termcap/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://termcap.wzhecnu.cn/manual/termcap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/capability-map/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/capability-map/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/capability-map/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/cli-tree/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/cli-tree/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/cli-tree/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/quickstart/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/rendering/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/rendering/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/templates/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/templates/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/templates/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/examples/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/examples/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/manual/termcap-templates/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/manual/termcap-templates/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/manual/termcap-templates/"/>
+    </url>
+    <url>
+        <loc>https://arch.gh.wzhecnu.cn/TermCap/en/manual/termcap/</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://arch.gh.wzhecnu.cn/TermCap/en/manual/termcap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://arch.gh.wzhecnu.cn/TermCap/manual/termcap/"/>
     </url>
 </urlset>
