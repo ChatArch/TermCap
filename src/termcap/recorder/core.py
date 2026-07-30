@@ -43,61 +43,78 @@ def record_session(
     decoder = codecs.getincrementaldecoder("utf-8")(errors="replace")
     
     start_time = time.time()
-    
+    stdin_open = True
+    master_open = True
+    child_exited = False
+
     try:
-        while True:
-            rlist = [input_fileno, master_fd]
-            rfds, _, _ = select.select(rlist, [], [])
-            
-            for fd in rfds:
-                if fd == input_fileno:
-                    # User input -> Child process
-                    try:
-                        data = os.read(input_fileno, 1024)
-                    except OSError:
-                        break
-                        
-                    if not data:
-                        break
-                        
+        while master_open:
+            read_fds = [master_fd]
+            if stdin_open:
+                read_fds.append(input_fileno)
+
+            try:
+                ready, _, _ = select.select(read_fds, [], [], 0.1)
+            except InterruptedError:
+                continue
+
+            if stdin_open and input_fileno in ready:
+                try:
+                    data = os.read(input_fileno, 1024)
+                except OSError:
+                    data = b""
+                if data:
                     os.write(master_fd, data)
-                    
-                elif fd == master_fd:
-                    # Child output -> User terminal + Recording
-                    try:
-                        data = os.read(master_fd, 1024)
-                    except OSError:
-                        break
-                        
-                    if not data:
-                        break
-                    
-                    # Write to user terminal
-                    os.write(output_fileno, data)
-                    
-                    # Record event
-                    elapsed = time.time() - start_time
-                    decoded_data = decoder.decode(data, final=False)
-                    if decoded_data:
-                        yield AsciiCastV2Event(
-                            time=elapsed,
-                            event_type="o",
-                            event_data=decoded_data
-                        )
-                        
-            # Check if child process is still alive
-            if os.waitpid(pid, os.WNOHANG)[0] == pid:
-                break
-                
-    except OSError:
-        pass
+                else:
+                    # Command-mode recording often starts with stdin already at
+                    # EOF. Stop polling it so the PTY output cannot be starved.
+                    stdin_open = False
+
+            if master_fd in ready:
+                try:
+                    data = os.read(master_fd, 4096)
+                except OSError:
+                    # Linux PTYs commonly report EIO after the child exits and
+                    # all buffered output has been drained.
+                    master_open = False
+                    continue
+
+                if not data:
+                    master_open = False
+                    continue
+
+                os.write(output_fileno, data)
+                elapsed = time.time() - start_time
+                decoded_data = decoder.decode(data, final=False)
+                if decoded_data:
+                    yield AsciiCastV2Event(
+                        time=elapsed,
+                        event_type="o",
+                        event_data=decoded_data,
+                    )
+
+            if not child_exited:
+                try:
+                    waited_pid, _ = os.waitpid(pid, os.WNOHANG)
+                except ChildProcessError:
+                    child_exited = True
+                else:
+                    child_exited = waited_pid == pid
+
+            # Do not break when the child exits: the PTY may still contain its
+            # final output. The loop ends only after master_fd reaches EOF/EIO.
     finally:
         os.close(master_fd)
-        # Flush decoder
+        if not child_exited:
+            try:
+                os.waitpid(pid, 0)
+            except (ChildProcessError, OSError):
+                pass
+
         remaining = decoder.decode(b"", final=True)
         if remaining:
             yield AsciiCastV2Event(
                 time=time.time() - start_time,
                 event_type="o",
-                event_data=remaining
+                event_data=remaining,
             )

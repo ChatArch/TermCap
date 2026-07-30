@@ -1,55 +1,73 @@
 # TermCap
 
-**TermCap** is a Unix terminal recorder written in Python that renders your command line sessions as standalone SVG animations.
+TermCap records Unix terminal sessions as asciicast v2 streams and renders them as standalone SVG animations or GIF files. Capture, replay, templates, and media export share one timeline, making the tool useful for project demos, operational tutorials, and reproducible command-line sessions.
 
-## Features
+<div class="grid cards" markdown>
 
-- Produce lightweight and clean looking animations embeddable on a project page
-- Custom color themes, terminal UI and animation controls via [SVG templates](manual/termcap-templates.md)
-- Compatible with asciinema recording format
+-   :material-record-circle-outline: **Capture a terminal**
 
-<p align="center">
-    <img src="../examples/awesome_window_frame_js.svg" width="80%">
-</p>
+    ---
 
-## Install
+    Record ANSI output, colors, cursor state, and terminal geometry inside a PTY and write an asciinema-compatible `.cast` file.
 
-TermCap is compatible with Linux, macOS and BSD OSes, requires Python >= 3.8 and can be installed using pip:
+    [Start capturing](quickstart.md#capture-a-terminal)
+
+-   :material-vector-square: **Render SVG**
+
+    ---
+
+    Rebuild terminal state with `pyte` and emit a lightweight scalable animation with discrete CSS keyframes.
+
+    [Understand rendering](rendering.md#cast-to-svg)
+
+-   :material-file-gif-box: **Export GIF**
+
+    ---
+
+    Freeze exact keyframes in Chrome and correct the viewport before capture to avoid clipped frames, black frames, and duplicate sampling.
+
+    [Export GIF](rendering.md#svg-to-gif)
+
+-   :material-palette-outline: **Templates and themes**
+
+    ---
+
+    Use 16 built-in templates or customize colors, fonts, window chrome, and scripts.
+
+    [Browse templates](templates.md)
+
+</div>
+
+## Choose by goal
+
+| Goal | Recommended command | Read next |
+|---|---|---|
+| Capture an interactive shell | `termcap record demo.cast -g 80x20` | [Quick start](quickstart.md) |
+| Capture one command | `termcap record demo.cast -c "python demo.py"` | [Capture and rendering](rendering.md) |
+| Convert CAST to SVG | `termcap render demo.cast demo.svg` | [CAST → SVG](rendering.md#cast-to-svg) |
+| Convert CAST directly to GIF | `termcap render demo.cast demo.gif --format gif` | [CAST → GIF](rendering.md#cast-to-gif) |
+| Convert an existing SVG to GIF | `termcap svg2gif demo.svg demo.gif` | [SVG → GIF](rendering.md#svg-to-gif) |
+| Inspect every command | `termcap` | [CLI tree](cli-tree.md) |
+
+## Shortest workflow
 
 ```bash
-pip3 install --user termcap
+pip install termcap
+termcap record demo.cast -g 80x20
+termcap render demo.cast demo.svg
+termcap render demo.cast demo.gif --format gif
 ```
 
-## Usage
+!!! tip "Control blank space"
+    Output dimensions come from the recorded terminal geometry. Use `-g 80x12` or another compact size for short demos. TermCap does not automatically remove valid terminal rows because full-screen programs and earlier frames may use them.
 
-Simply start recording a terminal session with:
+## Current capabilities
 
-```bash
-$ termcap record
-Recording started.
-Enter "exit" command or Control-D to end.
-```
+- asciicast v2 capture and replay
+- ANSI/256-color, wide-character, cursor, and text-style rendering
+- template-based SVG animations and still SVG frames
+- CAST → GIF and SVG → GIF
+- keyframe-first sampling, GIF timing quantization, and speed control
+- packaged built-in templates that work from an installed wheel
 
-You are now in a subshell where you can type your commands as usual.
-Once you are done, exit the shell to end the recording:
-
-```bash
-$ exit
-✓ 录制完成，时长: 10.5秒，共 42 个事件
-Recording ended, cast file is /tmp/termcap_exp5nsr4.cast
-```
-
-Finally, render the recording to an SVG animation:
-
-```bash
-$ termcap render /tmp/termcap_exp5nsr4.cast animation.svg
-Rendering started
-✓ 渲染完成
-Rendering ended, SVG animation is animation.svg
-```
-
-You can then use your favorite web browser to play the animation:
-
-```bash
-$ firefox animation.svg
-```
+See the [capability map](capability-map.md) for implemented boundaries and explicit non-goals.

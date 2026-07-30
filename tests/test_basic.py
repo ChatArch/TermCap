@@ -1,6 +1,7 @@
 def test_import():
     import termcap
     assert termcap
+    assert termcap.__version__ == "0.2.1"
 
 def test_config():
     from termcap.config import get_config_manager

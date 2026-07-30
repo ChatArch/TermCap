@@ -1,6 +1,7 @@
-import pytest
+import os
 import termios
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
+
 from termcap.recorder import core, terminal
 
 def test_get_terminal_size():
@@ -53,3 +54,29 @@ def test_record_session_header():
         assert header.width == 80
         assert header.height == 24
         assert header.version == 2
+
+
+def test_record_session_drains_child_output_after_stdin_eof():
+    input_read, input_write = os.pipe()
+    os.close(input_write)
+
+    try:
+        with open(os.devnull, "wb", buffering=0) as output:
+            records = list(
+                core.record_session(
+                    ["/bin/sh", "-c", "printf recorded-output"],
+                    80,
+                    24,
+                    input_read,
+                    output.fileno(),
+                )
+            )
+    finally:
+        os.close(input_read)
+
+    payload = "".join(
+        record.event_data
+        for record in records
+        if hasattr(record, "event_data")
+    )
+    assert "recorded-output" in payload

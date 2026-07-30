@@ -188,6 +188,8 @@ Temporary Items
 # Project specific
 *.cast
 *.svg
+!docs/**/*.svg
+!src/termcap/data/templates/*.svg
 man_*.tar.gz
 
 /.trae/

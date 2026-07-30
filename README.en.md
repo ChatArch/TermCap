@@ -1,67 +1,67 @@
 # TermCap
 
-[![Test](https://github.com/rexwzh/termcap/actions/workflows/ci.yml/badge.svg)](https://github.com/rexwzh/termcap/actions/workflows/ci.yml)
-[![Docs](https://github.com/rexwzh/termcap/actions/workflows/deploy.yml/badge.svg)](https://termcap.wzhecnu.cn)
+[![Tests](https://github.com/ChatArch/TermCap/actions/workflows/ci.yml/badge.svg)](https://github.com/ChatArch/TermCap/actions/workflows/ci.yml)
+[![Docs](https://github.com/ChatArch/TermCap/actions/workflows/deploy.yml/badge.svg)](https://arch.gh.wzhecnu.cn/TermCap/)
 [![PyPI](https://img.shields.io/pypi/v/termcap.svg)](https://pypi.org/project/termcap/)
 
-**TermCap** is a Unix terminal recorder written in Python that renders your command line sessions as standalone SVG animations.
+TermCap is a Python terminal capture and rendering tool. It records PTY sessions as asciicast v2 and exports SVG animations, still SVG frames, or GIF files.
 
-## Features
+- [Documentation](https://arch.gh.wzhecnu.cn/TermCap/en/)
+- [Quick start](https://arch.gh.wzhecnu.cn/TermCap/en/quickstart/)
+- [CLI tree](https://arch.gh.wzhecnu.cn/TermCap/en/cli-tree/)
+- [Capture and rendering](https://arch.gh.wzhecnu.cn/TermCap/en/rendering/)
+- [中文版](README.md)
 
-- Produce lightweight and clean looking animations embeddable on a project page
-- Custom color themes, terminal UI and animation controls via [SVG templates](docs/manual/termcap-templates.en.md)
-- Compatible with asciinema recording format
+## Core capabilities
+
+- interactive shell and single-command PTY capture
+- asciinema-compatible `.cast` files
+- ANSI color, cursor, text-style, and wide-character rendering
+- template-based SVG animation with 16 built-in themes
+- CAST→SVG, CAST→GIF, and SVG→GIF
+- deterministic keyframe sampling and automatic Chrome viewport correction
 
 <p align="center">
-    <img src="docs/examples/awesome_window_frame_js.svg" width="80%">
+  <img src="docs/examples/awesome_window_frame_js.svg" width="80%" alt="TermCap terminal animation example">
 </p>
 
 ## Install
 
-TermCap works on Linux, macOS and BSD, and requires Python >= 3.8.
+TermCap supports Linux, macOS, and BSD and requires Python 3.8 or newer. GIF export requires Google Chrome.
 
 ```bash
-pip3 install --user termcap
+python -m pip install termcap
+termcap --version
 ```
 
-## Usage
-
-Simply start recording a terminal session with:
+## Shortest workflow
 
 ```bash
-$ termcap record
-Recording started.
-Enter "exit" command or Control-D to end.
+termcap record demo.cast -g 80x20
+termcap render demo.cast demo.svg
+termcap render demo.cast demo.gif --format gif
 ```
 
-You are now in a subshell where you can type your commands as usual.
-Once you are done, exit the shell to end the recording:
+Capture one command:
 
 ```bash
-$ exit
-✓ 录制完成，时长: 10.5秒，共 42 个事件
-Recording ended, cast file is /tmp/termcap_exp5nsr4.cast
+termcap record tests.cast -g 100x24 -c "python -m pytest -q"
 ```
 
-Finally, render the recording to an SVG animation:
+Convert an existing SVG:
 
 ```bash
-$ termcap render /tmp/termcap_exp5nsr4.cast animation.svg
-Rendering started
-✓ 渲染完成
-Rendering ended, SVG animation is animation.svg
+termcap svg2gif demo.svg demo.gif --speed 1 --loop 0
 ```
 
-You can then use your favorite web browser to play the animation:
+## Documentation development
 
 ```bash
-$ firefox animation.svg
+python -m pip install -e '.[dev,docs]'
+mkdocs serve
+mkdocs build --strict
 ```
 
 ## License
 
-**MIT License**
-
-## Author
-
-- **termcap**: rexwzh (1073853456@qq.com)
+MIT License
