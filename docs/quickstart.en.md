@@ -27,19 +27,23 @@ termcap --version
 
 ## See the complete result first
 
-Both images come from the same terminal recording. The left card is a scalable animated SVG; the right card is a GIF exported deterministically from that SVG.
+Both images come from the same terminal recording. TermCap first produces a scalable animated SVG, then exports the GIF deterministically from the same timeline.
 
-<div class="grid cards" markdown>
+### SVG animation
 
--   **SVG animation**
+<p align="center">
+  <a href="../../assets/examples/quickstart.svg">
+    <img src="../../assets/examples/quickstart.svg" width="100%" alt="TermCap SVG quick-start example">
+  </a>
+</p>
 
-    [![TermCap SVG quick-start example](assets/examples/quickstart.svg)](assets/examples/quickstart.svg)
+### GIF export
 
--   **GIF export**
-
-    [![TermCap GIF quick-start example](assets/examples/quickstart.gif)](assets/examples/quickstart.gif)
-
-</div>
+<p align="center">
+  <a href="../../assets/examples/quickstart.gif">
+    <img src="../../assets/examples/quickstart.gif" width="100%" alt="TermCap GIF quick-start example">
+  </a>
+</p>
 
 [See the generator script and complete commands](examples/index.md#reproducible-svg-gif)
 

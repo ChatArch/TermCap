@@ -4,7 +4,7 @@
 
 ## 从命令到 SVG 和 GIF { #reproducible-svg-gif }
 
-这组素材由 `quickstart_demo.py` 真实录制，包含 ANSI 颜色、回车原地更新和中文宽字符。终端使用紧凑的 `72x10` geometry，适合嵌入 README 和文档页。
+这组素材由 `quickstart_demo.py` 真实录制，包含 ANSI 颜色、回车原地更新和中文宽字符。终端使用紧凑的 `72x8` geometry，适合嵌入 README 和文档页。
 
 在仓库 checkout 中运行：
 
@@ -13,7 +13,7 @@ git clone https://github.com/ChatArch/TermCap.git
 cd TermCap
 python -m pip install -e .
 
-termcap record quickstart.cast -g 72x10 \
+termcap record quickstart.cast -g 72x8 \
   -c "python3 docs/examples/quickstart_demo.py"
 
 mkdir -p docs/assets/examples
@@ -26,23 +26,27 @@ termcap svg2gif \
   --loop 0
 ```
 
-<div class="grid cards" markdown>
+### SVG 动画
 
--   **SVG 动画**
+<p align="center">
+  <a href="../assets/examples/quickstart.svg">
+    <img src="../assets/examples/quickstart.svg" width="100%" alt="TermCap SVG 快速示例">
+  </a>
+</p>
 
-    [![TermCap SVG 快速示例](../assets/examples/quickstart.svg)](../assets/examples/quickstart.svg)
+可缩放、保留文本与 CSS 离散关键帧。
 
-    可缩放、保留文本与 CSS 离散关键帧。
+### GIF 导出
 
--   **GIF 导出**
+<p align="center">
+  <a href="../assets/examples/quickstart.gif">
+    <img src="../assets/examples/quickstart.gif" width="100%" alt="TermCap GIF 快速示例">
+  </a>
+</p>
 
-    [![TermCap GIF 快速示例](../assets/examples/quickstart.gif)](../assets/examples/quickstart.gif)
+由同一 SVG 时间轴确定性采样，便于嵌入不支持动画 SVG 的页面。
 
-    由同一 SVG 时间轴确定性采样，便于嵌入不支持动画 SVG 的页面。
-
-</div>
-
-生成结果应为 `623x251`；当前 GIF 为 9 帧，总时长约 `3.16s`。中间 `.cast` 是构建输入，不提交到文档资产目录。
+生成结果应为 `623x217`；当前 GIF 为 9 帧，总时长约 `3.16s`。中间 `.cast` 是构建输入，不提交到文档资产目录。
 
 ## 模板画廊
 

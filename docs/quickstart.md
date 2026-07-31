@@ -27,19 +27,23 @@ termcap --version
 
 ## 先看完整结果
 
-下面两张图来自同一份终端录制：左侧是可缩放的动画 SVG，右侧是由该 SVG 确定性导出的 GIF。
+下面两张图来自同一份终端录制：先生成可缩放的动画 SVG，再从同一时间轴确定性导出 GIF。
 
-<div class="grid cards" markdown>
+### SVG 动画
 
--   **SVG 动画**
+<p align="center">
+  <a href="../assets/examples/quickstart.svg">
+    <img src="../assets/examples/quickstart.svg" width="100%" alt="TermCap SVG 快速示例">
+  </a>
+</p>
 
-    [![TermCap SVG 快速示例](assets/examples/quickstart.svg)](assets/examples/quickstart.svg)
+### GIF 导出
 
--   **GIF 导出**
-
-    [![TermCap GIF 快速示例](assets/examples/quickstart.gif)](assets/examples/quickstart.gif)
-
-</div>
+<p align="center">
+  <a href="../assets/examples/quickstart.gif">
+    <img src="../assets/examples/quickstart.gif" width="100%" alt="TermCap GIF 快速示例">
+  </a>
+</p>
 
 [查看生成脚本和完整命令](examples/index.md#reproducible-svg-gif)
 

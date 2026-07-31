@@ -4,7 +4,7 @@ The examples are split into two groups: a reproducible SVG/GIF quick-start examp
 
 ## From commands to SVG and GIF { #reproducible-svg-gif }
 
-The assets below are captured from the real `quickstart_demo.py` program. It exercises ANSI colors, carriage-return updates, and CJK wide characters. A compact `72x10` terminal geometry keeps the result suitable for README and documentation pages.
+The assets below are captured from the real `quickstart_demo.py` program. It exercises ANSI colors, carriage-return updates, and CJK wide characters. A compact `72x8` terminal geometry keeps the result suitable for README and documentation pages.
 
 Run from a repository checkout:
 
@@ -13,7 +13,7 @@ git clone https://github.com/ChatArch/TermCap.git
 cd TermCap
 python -m pip install -e .
 
-termcap record quickstart.cast -g 72x10 \
+termcap record quickstart.cast -g 72x8 \
   -c "python3 docs/examples/quickstart_demo.py"
 
 mkdir -p docs/assets/examples
@@ -26,23 +26,27 @@ termcap svg2gif \
   --loop 0
 ```
 
-<div class="grid cards" markdown>
+### SVG animation
 
--   **SVG animation**
+<p align="center">
+  <a href="../../assets/examples/quickstart.svg">
+    <img src="../../assets/examples/quickstart.svg" width="100%" alt="TermCap SVG quick-start example">
+  </a>
+</p>
 
-    [![TermCap SVG quick-start example](../assets/examples/quickstart.svg)](../assets/examples/quickstart.svg)
+Scalable output that preserves text and discrete CSS keyframes.
 
-    Scalable output that preserves text and discrete CSS keyframes.
+### GIF export
 
--   **GIF export**
+<p align="center">
+  <a href="../../assets/examples/quickstart.gif">
+    <img src="../../assets/examples/quickstart.gif" width="100%" alt="TermCap GIF quick-start example">
+  </a>
+</p>
 
-    [![TermCap GIF quick-start example](../assets/examples/quickstart.gif)](../assets/examples/quickstart.gif)
+Deterministically sampled from the same SVG timeline for pages that cannot play animated SVG.
 
-    Deterministically sampled from the same SVG timeline for pages that cannot play animated SVG.
-
-</div>
-
-The expected output size is `623x251`; the current GIF has 9 encoded frames and lasts about `3.16s`. The intermediate `.cast` file is a build input and is not committed as a documentation asset.
+The expected output size is `623x217`; the current GIF has 9 encoded frames and lasts about `3.16s`. The intermediate `.cast` file is a build input and is not committed as a documentation asset.
 
 ## Template gallery
 
