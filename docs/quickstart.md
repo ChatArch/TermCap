@@ -25,6 +25,24 @@ python -m pip install termcap
 termcap --version
 ```
 
+## 先看完整结果
+
+下面两张图来自同一份终端录制：左侧是可缩放的动画 SVG，右侧是由该 SVG 确定性导出的 GIF。
+
+<div class="grid cards" markdown>
+
+-   **SVG 动画**
+
+    [![TermCap SVG 快速示例](assets/examples/quickstart.svg)](assets/examples/quickstart.svg)
+
+-   **GIF 导出**
+
+    [![TermCap GIF 快速示例](assets/examples/quickstart.gif)](assets/examples/quickstart.gif)
+
+</div>
+
+[查看生成脚本和完整命令](examples/index.md#reproducible-svg-gif)
+
 ## 录制终端 { #capture-terminal }
 
 ### 交互式 shell

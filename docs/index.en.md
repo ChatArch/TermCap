@@ -2,6 +2,14 @@
 
 TermCap records Unix terminal sessions as asciicast v2 streams and renders them as standalone SVG animations or GIF files. Capture, replay, templates, and media export share one timeline, making the tool useful for project demos, operational tutorials, and reproducible command-line sessions.
 
+<p align="center">
+  <a href="examples/#reproducible-svg-gif">
+    <img src="../assets/examples/quickstart.gif" width="80%" alt="TermCap terminal capture to GIF quick-start example">
+  </a>
+</p>
+
+<p align="center"><a href="examples/#reproducible-svg-gif">View the matching SVG and complete generation commands</a></p>
+
 <div class="grid cards" markdown>
 
 -   :material-record-circle-outline: **Capture a terminal**

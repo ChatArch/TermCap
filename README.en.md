@@ -22,7 +22,14 @@ TermCap is a Python terminal capture and rendering tool. It records PTY sessions
 - deterministic keyframe sampling and automatic Chrome viewport correction
 
 <p align="center">
-  <img src="docs/examples/awesome_window_frame_js.svg" width="80%" alt="TermCap terminal animation example">
+  <a href="docs/examples/index.en.md">
+    <img src="docs/assets/examples/quickstart.gif" width="80%" alt="TermCap terminal capture to GIF example">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/assets/examples/quickstart.svg">View SVG</a> ·
+  <a href="docs/examples/index.en.md">View complete generation commands</a>
 </p>
 
 ## Install

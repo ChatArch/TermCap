@@ -25,6 +25,24 @@ python -m pip install termcap
 termcap --version
 ```
 
+## See the complete result first
+
+Both images come from the same terminal recording. The left card is a scalable animated SVG; the right card is a GIF exported deterministically from that SVG.
+
+<div class="grid cards" markdown>
+
+-   **SVG animation**
+
+    [![TermCap SVG quick-start example](assets/examples/quickstart.svg)](assets/examples/quickstart.svg)
+
+-   **GIF export**
+
+    [![TermCap GIF quick-start example](assets/examples/quickstart.gif)](assets/examples/quickstart.gif)
+
+</div>
+
+[See the generator script and complete commands](examples/index.md#reproducible-svg-gif)
+
 ## Capture a terminal
 
 ### Interactive shell
