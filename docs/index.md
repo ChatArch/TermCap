@@ -2,6 +2,14 @@
 
 TermCap 将 Unix 终端会话录制为 asciicast v2，并渲染为可独立分发的 SVG 动画或 GIF。录制、重放、模板和媒体导出使用同一条时间轴，适合项目演示、操作教程和可复现的命令行记录。
 
+<p align="center">
+  <a href="examples/#reproducible-svg-gif">
+    <img src="assets/examples/quickstart.gif" width="80%" alt="TermCap 从终端录制导出 GIF 的快速示例">
+  </a>
+</p>
+
+<p align="center"><a href="examples/#reproducible-svg-gif">查看对应的 SVG 和完整生成命令</a></p>
+
 <div class="grid cards" markdown>
 
 -   :material-record-circle-outline: **录制终端**

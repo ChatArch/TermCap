@@ -25,6 +25,28 @@ python -m pip install termcap
 termcap --version
 ```
 
+## 先看完整结果
+
+下面两张图来自同一份终端录制：先生成可缩放的动画 SVG，再从同一时间轴确定性导出 GIF。
+
+### SVG 动画
+
+<p align="center">
+  <a href="../assets/examples/quickstart.svg">
+    <img src="../assets/examples/quickstart.svg" width="100%" alt="TermCap SVG 快速示例">
+  </a>
+</p>
+
+### GIF 导出
+
+<p align="center">
+  <a href="../assets/examples/quickstart.gif">
+    <img src="../assets/examples/quickstart.gif" width="100%" alt="TermCap GIF 快速示例">
+  </a>
+</p>
+
+[查看生成脚本和完整命令](examples/index.md#reproducible-svg-gif)
+
 ## 录制终端 { #capture-terminal }
 
 ### 交互式 shell

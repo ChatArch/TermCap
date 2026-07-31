@@ -22,7 +22,14 @@ TermCap 是一个 Python 终端录制与渲染工具：把 PTY 会话保存为 a
 - 关键帧确定性采样和 Chrome viewport 自动校正
 
 <p align="center">
-  <img src="docs/examples/awesome_window_frame_js.svg" width="80%" alt="TermCap 终端动画示例">
+  <a href="docs/examples/index.md">
+    <img src="docs/assets/examples/quickstart.gif" width="80%" alt="TermCap 终端录制导出 GIF 示例">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/assets/examples/quickstart.svg">查看 SVG</a> ·
+  <a href="docs/examples/index.md">查看完整生成命令</a>
 </p>
 
 ## 安装

@@ -25,6 +25,28 @@ python -m pip install termcap
 termcap --version
 ```
 
+## See the complete result first
+
+Both images come from the same terminal recording. TermCap first produces a scalable animated SVG, then exports the GIF deterministically from the same timeline.
+
+### SVG animation
+
+<p align="center">
+  <a href="../../assets/examples/quickstart.svg">
+    <img src="../../assets/examples/quickstart.svg" width="100%" alt="TermCap SVG quick-start example">
+  </a>
+</p>
+
+### GIF export
+
+<p align="center">
+  <a href="../../assets/examples/quickstart.gif">
+    <img src="../../assets/examples/quickstart.gif" width="100%" alt="TermCap GIF quick-start example">
+  </a>
+</p>
+
+[See the generator script and complete commands](examples/index.md#reproducible-svg-gif)
+
 ## Capture a terminal
 
 ### Interactive shell
